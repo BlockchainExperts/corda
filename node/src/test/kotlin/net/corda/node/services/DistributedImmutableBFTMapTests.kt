@@ -32,7 +32,7 @@ class DistributedImmutableBFTMapTests {
         dataSource.close()
     }
 
-    @Test
+    @Test @Ignore
     fun `stores entries correctly and detects conflicts`() {
         (0..3).forEach { i ->
             thread { BFTSmartServer<String, String>(i, database, "bft_notary_committed_states_$i") }.apply { Thread.sleep(500) }
